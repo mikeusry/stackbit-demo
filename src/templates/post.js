@@ -28,10 +28,11 @@ export default class Post extends React.Component {
                   <div className="post-content">
                     {htmlToReact(_.get(this.props, 'pageContext.html'))}
                   </div>
-                  <footer className="post-meta"> <span>Published on:</span>
+                  <footer className="post-meta"> <span>Published on: </span>
                     <time className="published"
                       dateTime={moment(_.get(this.props, 'pageContext.frontmatter.date')).strftime('%Y-%m-%d %H:%M')}>{moment(_.get(this.props, 'pageContext.frontmatter.date')).strftime('%A, %B %e, %Y')}</time>
-                      <div className="post-author">{_.get(this.props, 'pageContext.frontmatter.author')}</div>
+                      <br />
+                      <span>by: </span><div className="post-author">{_.get(this.props, 'pageContext.frontmatter.author_link.name')}</div>
                   </footer>
                 </article>
               </div>
